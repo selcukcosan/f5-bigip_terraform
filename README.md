@@ -1,6 +1,6 @@
 # f5-bigip_terraform
 
-This example Terraform file will create node, monitor, pool, and virtual servers as per the F5 TF Module https://github.com/F5Networks/terraform-provider-bigip![image](https://github.com/selcukcosan/f5-bigip_terraform/assets/72107322/8552cd0e-ce00-49d6-8823-4175f821c7cd)
+This example Terraform configuration file will create node, monitor, pool, and virtual servers. The configuration uses F5 official Terraform module on https://github.com/F5Networks/terraform-provider-bigip![image](https://github.com/selcukcosan/f5-bigip_terraform/assets/72107322/8552cd0e-ce00-49d6-8823-4175f821c7cd)
 
 
 # terraform init
