@@ -4,8 +4,8 @@ This example Terraform configuration file will create node, monitor, pool, and v
 
 
 # terraform init
-
-selcuk@linux:~/terraform/test1$ terraform init
+```bash
+terraform init
 
 Initializing the backend...
 
@@ -14,7 +14,7 @@ Initializing provider plugins...
 - Using previously-installed f5networks/bigip v1.16.2
 
 Terraform has been successfully initialized!
-
+```
 
 
 # terraform plan
