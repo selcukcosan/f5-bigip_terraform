@@ -215,7 +215,7 @@ Terraform will perform the following actions:
     }
 
 Plan: 5 to add, 0 to change, 0 to destroy.
-```
+
 Do you want to perform these actions?
   Terraform will perform the actions described above.
   Only 'yes' will be accepted to approve.
@@ -234,7 +234,7 @@ bigip_ltm_pool_attachment.attach_node1: Creation complete after 0s [id=/Common/t
 bigip_ltm_virtual_server.http: Creation complete after 1s [id=/Common/terraform_vs_http]
 
 Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
-
+```
 # Result
 
 
