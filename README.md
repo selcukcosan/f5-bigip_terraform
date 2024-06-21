@@ -232,3 +232,58 @@ bigip_ltm_pool_attachment.attach_node1: Creation complete after 0s [id=/Common/t
 bigip_ltm_virtual_server.http: Creation complete after 1s [id=/Common/terraform_vs_http]
 
 Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
+
+# Result
+
+
+Monitor, Node, Pool , Virtual Server has been created
+```
+ltm monitor http terraform_monitor {
+    adaptive disabled
+    defaults-from http
+    destination *:*
+    interval 5
+    ip-dscp 0
+    recv none
+    recv-disable none
+    send "GET / HTTP/1.0\r\n\r\n"
+    time-until-up 0
+    timeout 16
+}
+ltm node terraform_dvwa {
+    address 192.168.204.212
+    monitor gateway_icmp
+    session monitor-enabled
+    state up
+}
+ltm pool terraform-pool {
+    members {
+        terraform_dvwa:http {
+            address 192.168.204.212
+            session monitor-enabled
+            state up
+        }
+    }
+    monitor terraform_monitor
+    slow-ramp-time 0
+}
+ltm virtual terraform_vs_http {
+    creation-time 2023-02-22:20:56:30
+    destination 192.168.203.212:http
+    ip-protocol tcp
+    last-modified-time 2023-02-22:20:56:30
+    mask 255.255.255.255
+    pool terraform-pool
+    profiles {
+        tcp { }
+    }
+    serverssl-use-sni disabled
+    source 0.0.0.0/0
+    source-address-translation {
+        type automap
+    }
+    translate-address enabled
+    translate-port enabled
+    vs-index 69
+}
+```
