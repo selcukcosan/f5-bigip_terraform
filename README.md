@@ -18,14 +18,14 @@ Terraform has been successfully initialized!
 
 
 # terraform plan
-
-selcuk@linux:~/terraform/test1$ terraform plan
+```bash
+terraform plan
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
 Terraform will perform the following actions:
-```
+
   # bigip_ltm_monitor.monitor will be created
   + resource "bigip_ltm_monitor" "monitor" {
       + adaptive       = (known after apply)
